@@ -1,9 +1,9 @@
 const axios = require('axios')
 
 test('Deve remover motorista', async function () {
-    const nome = 'joao'
+    const id = 3
     const expect_response = "Motorista removido com sucesso"
-    const response = await axios.delete(`http://127.0.0.1:3000/drivers/delete/${nome}`)
+    const response = await axios.delete(`http://127.0.0.1:3000/drivers/delete/${id}`)
     expect(response.data).toEqual(expect_response)
     expect(response.status).toBe(200)
 })
