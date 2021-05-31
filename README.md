@@ -55,8 +55,6 @@ Para a execução do projeto de maneira local deve ser executado os seguintes pa
 
 ## <i>Endpoints</i> principais
 
-Para todos os casos um <code>JSON</code> é retornado como resposta.
-
 <br/>
 <h3>Consulta <code>(GET)</code></h3>
 <br/>
