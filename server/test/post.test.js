@@ -13,13 +13,15 @@ test('Deve cadastrar motorista', async function () {
 
 test('Deve cadastrar carro', async function () {
     const automovel = {
-        "placa": "ABC-1234",
+        "placa": "ERP-1111",
         "marca": "honda",
-        "cor": "prata",
+        "cor": "preto",
     }
     const response = await axios.post(`http://127.0.0.1:3000/cars/register/`, {
         automovel
     })
+
+    jest.setTimeout(20000)
     expect(response.status).toBe(200)
 })
 
