@@ -71,8 +71,8 @@ router.post('/register', async (req, res, next) => {
 router.put('/update', async (req, res, next) => {
     const car = {
         "placa": req.body.placa,
-        "marca": req.body.marca,
-        "cor": req.body.cor,
+        "marca": req.body.marca.toUpperCase(),
+        "cor": req.body.cor.toUpperCase(),
     }
     const msg = {
         "sucesso": "Automóvel alterado com sucesso!",
