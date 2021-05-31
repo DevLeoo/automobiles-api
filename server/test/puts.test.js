@@ -6,9 +6,11 @@ test('Deve alterar motorista', async function () {
         "id": 1,
         "nome": "Teste",
     }
-    const response = await axios.put(`http://127.0.0.1:3000/drivers/register/`, {
+    const response = await axios.put(`http://127.0.0.1:3000/drivers/update/`, {
         motorista
     })
+
+    jest.setTimeout(20000)
     expect(response.status).toBe(200)
 })
 
@@ -18,9 +20,10 @@ test('Deve alterar carro', async function () {
         "marca": "honda",
         "cor": "prata",
     }
-    const response = await axios.put(`http://127.0.0.1:3000/cars/register/`, {
+    const response = await axios.put(`http://127.0.0.1:3000/cars/update/`, {
         automovel
     })
+    jest.setTimeout(20000)
     expect(response.status).toBe(200)
 })
 
@@ -30,7 +33,8 @@ test('Deve finalizar aluguel', async function () {
         "automovel": 'ABC-1234',
     }
     const response = await axios.put(`http://127.0.0.1:3000/rent/finished/`, {
-        automovel
+        rent_fields
     })
+    jest.setTimeout(20000)
     expect(response.status).toBe(200)
 })
