@@ -71,7 +71,8 @@ router.post('/register', async (req, res, next) => {
 
 router.put('/finished', async (req, res, next) => {
     const rent_fields = {
-        "automovel": req.body.automovel,
+        "id": req.body.id,
+        "automovel": req.body.automovel
     }
     const msg = {
         "sucesso": "Aluguel finalizado com sucesso!",
@@ -79,11 +80,11 @@ router.put('/finished', async (req, res, next) => {
     }
 
     try {
-        if (rent_fields.automovel != undefined && rent_fields.automovel != '') {
+        if (rent_fields.id != undefined && rent_fields.id != '') {
             verifyRent(rent_fields.automovel)
                 .then(resp => {
                     if (resp == false || resp != null) {
-                        let sql = `UPDATE aluguel_carro SET data_entrega = '${moment(new Date).format('YYYY-MM-DD')}' where automovel = '${rent_fields.automovel}'`
+                        let sql = `UPDATE aluguel_carro SET data_entrega = '${moment(new Date).format('YYYY-MM-DD')}' where ID = ${rent_fields.id}`
                         try {
                             let result = db.handle(sql)
                         } catch (e) {
