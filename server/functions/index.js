@@ -39,14 +39,11 @@ async function verifyRent(placa) {
     try {
         let result = await db.handle(sql)
         if (result.length != 0) {
-            if (result.data_retirada == null) {
-                console.log('retornando true do rent')
+            if (result.data_retirada == '') {
                 return true
             }
-            console.log('retornando false do rent')
             return false
         }
-        console.log('retornando true2 do rent')
         return null
     } catch (erro) {
         console.log(erro)
